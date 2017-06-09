@@ -80,9 +80,9 @@ if (canvas.getContext) {
     //LEFT
 
     c.beginPath();
-    c.moveTo(150, 74);
-    c.lineTo(100, 74);
-    c.lineTo(125, 125);
+    c.moveTo(140, 74.5);
+    c.lineTo(90, 74.5);
+    c.lineTo(115, 125);
     c.closePath();
     c.fillStyle = mainColor;
     c.fill();
@@ -90,9 +90,9 @@ if (canvas.getContext) {
     //RIGHT
 
     c.beginPath();
-    c.moveTo(450, 75);
-    c.lineTo(500, 75);
-    c.lineTo(475, 125);
+    c.moveTo(460, 75);
+    c.lineTo(510, 75);
+    c.lineTo(485, 125);
     c.closePath();
     c.fillStyle = mainColor;
     c.fill();
@@ -100,7 +100,7 @@ if (canvas.getContext) {
     // E Y E S
     //
     //LEFT
-	
+
     c.beginPath();
     c.moveTo(200, 85);
     c.lineTo(260, 85);
@@ -194,8 +194,21 @@ if (canvas.getContext) {
     c.fillStyle = eyeColor5;
     c.fill();
 
-    // L I G H T
-    
+    //T O O T H 
+
+    c.beginPath();
+    c.moveTo(280, 185);
+    c.lineTo(320, 185);
+    c.quadraticCurveTo(320, 205, 300, 205);
+    c.quadraticCurveTo(280, 205, 280, 185);
+    c.closePath();
+    c.fillStyle = eyeColor;
+    c.fill();
+
+    // L I G H T S
+
+    //RIGHT EYE LIGHT
+
     c.beginPath();
     c.moveTo(200, 85);
     c.lineTo(260, 85);
@@ -203,7 +216,9 @@ if (canvas.getContext) {
     c.closePath();
     c.fillStyle = colorOpacity;
     c.fill();
-    
+
+    //RIGHT EYE LIGHT
+
     c.beginPath();
     c.moveTo(340, 85);
     c.lineTo(400, 85);
@@ -211,6 +226,8 @@ if (canvas.getContext) {
     c.closePath();
     c.fillStyle = colorOpacity;
     c.fill();
+
+    //RIGHT EARS LIGHT
 
     c.beginPath();
     c.moveTo(230, 30);
@@ -220,14 +237,18 @@ if (canvas.getContext) {
     c.fillStyle = colorOpacity;
     c.fill();
 
+    //RIGHT EARS LIGHT
+
     c.beginPath();
-    c.moveTo(400, 75);
+    c.moveTo(370, 30);
+    c.lineTo(380, 47);
     c.lineTo(340, 75);
-    c.lineTo(370, 30);
     c.closePath();
     c.fillStyle = colorOpacity;
     c.fill();
-	
+
+    //MAIN LIGHT
+
     c.beginPath();
     c.moveTo(0, 0);
     c.lineTo(600, 0);
@@ -235,4 +256,6 @@ if (canvas.getContext) {
     c.closePath();
     c.fillStyle = colorOpacity;
     c.fill();
+
+
 }
