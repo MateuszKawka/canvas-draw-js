@@ -1,16 +1,38 @@
 * {
-	margin:0;
-	padding:0;
+    margin: 0;
+    padding: 0;
 }
-
+body {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+		align-items: center;
+}
 p {
-	text-align: center;
-	margin-top: 10px;
-	font-weight: 700;
-	font-family: 'Arial'
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 700;
+    font-family: 'Oswald';
+    font-size: 32px;
+    padding: 18px;
 }
-
+.flat {
+    color: #EEE657;
+    font-size: 54px;
+}
+.bat {
+    font-size: 32px;
+    color: #1A1B47;
+}
+.canvas {
+    font-size: 48px;
+    color: #B73130;
+}
 #canvas {
-	display: flex;
-	margin: 10% auto;
+    display: flex;
+    margin: 0 auto;
+}
+#canvas {
+    margin: 0 40%;
 }
