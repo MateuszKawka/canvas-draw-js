@@ -1,6 +1,6 @@
-var canvas = document.getElementById('canvas'),
+const canvas = document.getElementById("canvas"),
     mainColor = "#251539",
-    ears = "#9465AB",
+    earsColor = "#9465AB",
     eyeColor = "#ffffff",
     eyeColor2 = "#1A1B47",
     eyeColor3 = "#4D387B",
@@ -8,19 +8,18 @@ var canvas = document.getElementById('canvas'),
     eyeColor5 = "#FFFFFF",
     colorOpacity = "rgba(255, 255, 255, 0.1)";
 
+const c = canvas.getContext("2d");
+canvas.width = '600'
+canvas.height = '400'
 
+// B A C K G R O U N D
 
-if (canvas.getContext) {
-    var c = canvas.getContext('2d');
+c.beginPath();
+c.rect(0, 0, canvas.width, canvas.height);
 
-    // B A C K G R O U N D 
+// B O D Y
 
-    c.beginPath();
-    c.rect(0, 0, 600, 400);
-
-
-    // B O D Y
-
+const body = () => {
     c.beginPath();
     c.moveTo(140, 75);
     c.lineTo(460, 75);
@@ -30,10 +29,13 @@ if (canvas.getContext) {
     c.stroke();
     c.fillStyle = mainColor;
     c.fill();
+}
 
-    // E A R S
-    //
-    //LEFT
+//-- ears
+
+let ears = () => {
+
+    //-- left
 
     c.beginPath();
     c.moveTo(200, 75);
@@ -43,7 +45,18 @@ if (canvas.getContext) {
     c.fillStyle = mainColor;
     c.fill();
 
-    //RIGHT
+    //-- inner left
+
+    c.beginPath();
+    c.moveTo(210, 70);
+    c.lineTo(250, 70);
+    c.lineTo(230, 41);
+    c.closePath();
+    c.fillStyle = earsColor;
+    c.fill();
+
+
+    //-- right
 
     c.beginPath();
     c.moveTo(400, 75);
@@ -53,41 +66,30 @@ if (canvas.getContext) {
     c.fillStyle = mainColor;
     c.fill();
 
-    // I N N E R  E A R S
-    //
-    //LEFT
-
-    c.beginPath();
-    c.moveTo(210, 70);
-    c.lineTo(250, 70);
-    c.lineTo(230, 41);
-    c.closePath();
-    c.fillStyle = ears;
-    c.fill();
-
-    //RIGHT
+    //-- inner right
 
     c.beginPath();
     c.moveTo(390, 70);
     c.lineTo(350, 70);
     c.lineTo(370, 41);
     c.closePath();
-    c.fillStyle = ears;
+    c.fillStyle = earsColor;
     c.fill();
+}
 
-    // W I N G S 
-    //
-    //LEFT
+const wings = () => {
+
+    //-- left
 
     c.beginPath();
-    c.moveTo(140, 74.5);
-    c.lineTo(90, 74.5);
+    c.moveTo(140, 75);
+    c.lineTo(90, 75);
     c.lineTo(115, 125);
     c.closePath();
     c.fillStyle = mainColor;
     c.fill();
 
-    //RIGHT
+    //-- right
 
     c.beginPath();
     c.moveTo(460, 75);
@@ -96,10 +98,13 @@ if (canvas.getContext) {
     c.closePath();
     c.fillStyle = mainColor;
     c.fill();
+}
 
-    // E Y E S
-    //
-    //LEFT
+//-- eyes
+
+const eyes = () => {
+
+    //-- left
 
     c.beginPath();
     c.moveTo(200, 85);
@@ -110,20 +115,7 @@ if (canvas.getContext) {
     c.fill();
     c.closePath();
 
-    //RIGHT
-
-    c.beginPath();
-    c.moveTo(340, 85);
-    c.lineTo(400, 85);
-    c.quadraticCurveTo(385, 140, 370, 140);
-    c.quadraticCurveTo(355, 140, 340, 85);
-    c.fillStyle = eyeColor;
-    c.fill();
-    c.closePath();
-
-    // I N N E R  E Y E S
-
-    //LEFT
+    //-- inner left
 
     c.beginPath();
     c.moveTo(210, 85);
@@ -134,7 +126,42 @@ if (canvas.getContext) {
     c.fillStyle = eyeColor2;
     c.fill();
 
-    //RIGHT
+    //-- inner left v2
+
+    c.beginPath();
+    c.arc(230, 100, 13, 0, 2 * Math.PI);
+    c.closePath();
+    c.fillStyle = eyeColor3;
+    c.fill();
+
+    //-- inner left v3
+
+    c.beginPath();
+    c.arc(230, 100, 6, 0, 2 * Math.PI);
+    c.closePath();
+    c.fillStyle = eyeColor4;
+    c.fill();
+
+    //-- inner left v4
+
+    c.beginPath();
+    c.arc(236, 94, 4, 0, 2 * Math.PI);
+    c.closePath();
+    c.fillStyle = eyeColor5;
+    c.fill();
+
+    //-- right
+
+    c.beginPath();
+    c.moveTo(340, 85);
+    c.lineTo(400, 85);
+    c.quadraticCurveTo(385, 140, 370, 140);
+    c.quadraticCurveTo(355, 140, 340, 85);
+    c.fillStyle = eyeColor;
+    c.fill();
+    c.closePath();
+
+    //-- inner right
 
     c.beginPath();
     c.moveTo(350, 85);
@@ -145,15 +172,7 @@ if (canvas.getContext) {
     c.fillStyle = eyeColor2;
     c.fill();
 
-    //LEFT 2
-
-    c.beginPath();
-    c.arc(230, 100, 13, 0, 2 * Math.PI);
-    c.closePath();
-    c.fillStyle = eyeColor3;
-    c.fill();
-
-    //RIGHT 2
+    //-- inner right v2
 
     c.beginPath();
     c.arc(370, 100, 13, 0, 2 * Math.PI);
@@ -161,15 +180,7 @@ if (canvas.getContext) {
     c.fillStyle = eyeColor3;
     c.fill();
 
-    //LEFT 3
-
-    c.beginPath();
-    c.arc(230, 100, 6, 0, 2 * Math.PI);
-    c.closePath();
-    c.fillStyle = eyeColor4;
-    c.fill();
-
-    ///RIGHT 3
+    //-- inner right v3
 
     c.beginPath();
     c.arc(370, 100, 6, 0, 2 * Math.PI);
@@ -177,24 +188,17 @@ if (canvas.getContext) {
     c.fillStyle = eyeColor4;
     c.fill();
 
-
-    //LEFT 4
-
-    c.beginPath();
-    c.arc(236, 94, 4, 0, 2 * Math.PI);
-    c.closePath();
-    c.fillStyle = eyeColor5;
-    c.fill();
-
-    //RIGHT 4
+    //-- inner right v4
 
     c.beginPath();
     c.arc(376, 94, 4, 0, 2 * Math.PI);
     c.closePath();
     c.fillStyle = eyeColor5;
     c.fill();
+}
 
-    //T O O T H 
+
+const tooth = () => {
 
     c.beginPath();
     c.moveTo(280, 185);
@@ -204,50 +208,13 @@ if (canvas.getContext) {
     c.closePath();
     c.fillStyle = eyeColor;
     c.fill();
+}
 
-    // L I G H T S
+// L I G H T S
 
-    //RIGHT EYE LIGHT
+const lights = () => {
 
-    c.beginPath();
-    c.moveTo(200, 85);
-    c.lineTo(260, 85);
-    c.lineTo(210, 120);
-    c.closePath();
-    c.fillStyle = colorOpacity;
-    c.fill();
-
-    //RIGHT EYE LIGHT
-
-    c.beginPath();
-    c.moveTo(340, 85);
-    c.lineTo(400, 85);
-    c.lineTo(360, 120);
-    c.closePath();
-    c.fillStyle = colorOpacity;
-    c.fill();
-
-    //RIGHT EARS LIGHT
-
-    c.beginPath();
-    c.moveTo(230, 30);
-    c.lineTo(200, 75);
-    c.lineTo(240, 40);
-    c.closePath();
-    c.fillStyle = colorOpacity;
-    c.fill();
-
-    //RIGHT EARS LIGHT
-
-    c.beginPath();
-    c.moveTo(370, 30);
-    c.lineTo(380, 47);
-    c.lineTo(340, 75);
-    c.closePath();
-    c.fillStyle = colorOpacity;
-    c.fill();
-
-    //MAIN LIGHT
+    //-- main light
 
     c.beginPath();
     c.moveTo(0, 0);
@@ -258,4 +225,43 @@ if (canvas.getContext) {
     c.fill();
 
 
+    //--right eye
+
+    c.beginPath();
+    c.moveTo(340, 85);
+    c.lineTo(400, 85);
+    c.lineTo(360, 120);
+    c.closePath();
+    c.fillStyle = colorOpacity;
+    c.fill();
+
+    //-- left ear
+
+    c.beginPath();
+    c.moveTo(230, 30);
+    c.lineTo(200, 75);
+    c.lineTo(240, 40);
+    c.closePath();
+    c.fillStyle = colorOpacity;
+    c.fill();
+
+    //-- right ear
+
+    c.beginPath();
+    c.moveTo(370, 30);
+    c.lineTo(380, 47);
+    c.lineTo(340, 75);
+    c.closePath();
+    c.fillStyle = colorOpacity;
+    c.fill();
+
 }
+
+// LET'S GO LEGO NINJA !
+
+body();
+ears();
+eyes();
+wings();
+tooth();
+lights();
